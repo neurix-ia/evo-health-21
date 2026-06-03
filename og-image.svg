@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#137b92"/>
+      <stop offset="100%" style="stop-color:#5ac4b3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="600" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="white" letter-spacing="12">DESAFIO</text>
+  <text x="600" y="310" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="bold" fill="white" letter-spacing="6">EVO HEALTH 30</text>
+  <text x="600" y="400" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="rgba(255,255,255,0.9)">30 Dias de Transformacao</text>
+  <line x1="400" y1="440" x2="800" y2="440" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <text x="600" y="500" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="rgba(255,255,255,0.8)">4 pilares  |  1.200 pontos  |  Premios exclusivos</text>
+</svg>

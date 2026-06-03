@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regulamento Oficial — Desafio EvoHealth 21</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --evo-primary: #137b92;
+      --evo-primary-dark: #0d5f72;
+      --bg: #fcfaef;
+      --text-dark: #1a2e35;
+      --text-muted: #4a5e68;
+      --border: rgba(19, 123, 146, 0.2);
+      --highlight-bg: rgba(19, 123, 146, 0.06);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    header h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--evo-primary);
+      line-height: 1.3;
+    }
+
+    .updated {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* Table of Contents */
+    .toc {
+      background: var(--highlight-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .toc h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--evo-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .toc ol {
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+
+    .toc ol li {
+      margin-bottom: 0.3rem;
+    }
+
+    .toc a {
+      color: var(--evo-primary);
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--evo-primary);
+      margin: 2.5rem 0 0.75rem;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    ul, ol.section-list {
+      color: var(--text-muted);
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul li, ol.section-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    strong {
+      color: var(--text-dark);
+    }
+
+    a {
+      color: var(--evo-primary);
+      text-decoration: underline;
+    }
+
+    .highlight-box {
+      background: var(--highlight-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+    }
+
+    .quote-box {
+      background: var(--highlight-bg);
+      border-left: 4px solid var(--evo-primary);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--text-dark);
+    }
+
+    .quote-box p {
+      color: var(--text-dark);
+      margin: 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: var(--evo-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        padding: 1rem;
+        font-size: 11pt;
+      }
+
+      .container {
+        max-width: 100%;
+      }
+
+      header h1, h2, .toc h2 {
+        color: #000;
+      }
+
+      a {
+        color: #000;
+        text-decoration: underline;
+      }
+
+      .toc, .highlight-box, .quote-box {
+        border-color: #ccc;
+        background: #f5f5f5;
+      }
+
+      .quote-box {
+        border-left-color: #333;
+      }
+
+      .back-link {
+        display: none;
+      }
+
+      footer {
+        border-top-color: #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="logo.png" alt="EvoHealth" />
+      <h1>Regulamento Oficial — Desafio EvoHealth 21</h1>
+    </header>
+
+    <p class="updated">Última atualização: abril de 2026</p>
+
+    <!-- Table of Contents -->
+    <nav class="toc">
+      <h2>Sumário</h2>
+      <ol>
+        <li><a href="#sec1">Disposições Gerais</a></li>
+        <li><a href="#sec2">Participação e Inscrição</a></li>
+        <li><a href="#sec3">Os 4 Pilares Obrigatórios</a></li>
+        <li><a href="#sec4">Sistema de Pontuação</a></li>
+        <li><a href="#sec5">Registro e Validação</a></li>
+        <li><a href="#sec6">Prazo de Registro</a></li>
+        <li><a href="#sec7">Integridade</a></li>
+        <li><a href="#sec8">Ranking e Desempate</a></li>
+        <li><a href="#sec9">Premiação</a></li>
+        <li><a href="#sec10">Política de Cancelamento e Reembolso</a></li>
+        <li><a href="#sec11">Proteção de Dados (LGPD)</a></li>
+        <li><a href="#sec12">Disposições Finais</a></li>
+      </ol>
+    </nav>
+
+    <!-- Section 1 -->
+    <h2 id="sec1">1. Disposições Gerais</h2>
+    <p>O Desafio EvoHealth 21 não é apenas uma competição, é um protocolo de 21 dias desenhado para reprogramar os seus hábitos e otimizar a sua saúde de forma integral.</p>
+    <ul>
+      <li><strong>Organizador:</strong> EvoHealth (<a href="https://evohealth.med.br" target="_blank">evohealth.med.br</a>)</li>
+      <li><strong>Natureza:</strong> Desafio de bem-estar com premiação</li>
+      <li><strong>Período:</strong> A definir (21 dias corridos)</li>
+      <li><strong>Duração:</strong> 21 dias corridos, sem pausas, prorrogação ou reposição</li>
+      <li><strong>Plataforma exclusiva:</strong> App GymRats</li>
+    </ul>
+
+    <!-- Section 2 -->
+    <h2 id="sec2">2. Participação e Inscrição</h2>
+    <ul>
+      <li><strong>Valor da inscrição:</strong> R$97,00 (pagamento via Método Evo)</li>
+      <li><strong>Idade mínima:</strong> 18 anos completos. Menores de 18 anos podem participar mediante autorização expressa dos responsáveis legais.</li>
+      <li>Ao efetuar a inscrição, o participante receberá o link de acesso ao grupo oficial do desafio no app GymRats após a confirmação do pagamento.</li>
+      <li>A inscrição implica a aceitação integral deste regulamento.</li>
+    </ul>
+
+    <!-- Section 3 -->
+    <h2 id="sec3">3. Os 4 Pilares Obrigatórios</h2>
+    <p>O Desafio EvoHealth 21 é estruturado em <strong>4 pilares obrigatórios</strong>, que devem ser cumpridos <strong>diariamente</strong>:</p>
+    <ol class="section-list">
+      <li><strong>Movimento Intencional</strong> — prática estruturada de atividade física (treino, esporte, etc.)</li>
+      <li><strong>Nutrição Estratégica</strong> — alimentação com comida real, otimizando a fisiologia e sem ultraprocessados</li>
+      <li><strong>Clareza e Propósito</strong> — momento de reconexão espiritual, reflexão ou oração</li>
+      <li><strong>Recuperação Ativa</strong> — práticas de cuidado pessoal que baseiam a performance (sono, leitura, organização, skincare)</li>
+    </ol>
+
+    <div class="highlight-box">
+      <p><strong>Atenção:</strong> Todos os 4 pilares são obrigatórios todos os dias. Falhar em qualquer um dos pilares impacta diretamente a pontuação do dia.</p>
+    </div>
+
+    <!-- Section 4 -->
+    <h2 id="sec4">4. Sistema de Pontuação</h2>
+    <ul>
+      <li><strong>Máximo por dia:</strong> 40 pontos (10 pontos por pilar)</li>
+      <li><strong>Total máximo do desafio:</strong> 840 pontos (40 pontos x 21 dias)</li>
+      <li>Dias zerados são permitidos, mas <strong>não são compensáveis</strong> — não é possível recuperar pontos de dias anteriores.</li>
+      <li>Cada dia é independente: a pontuação de um dia não afeta nem compensa a de outro.</li>
+    </ul>
+
+    <!-- Section 5 -->
+    <h2 id="sec5">5. Registro e Validação</h2>
+    <p>Toda ação deve ser comprovada com <strong>foto real</strong>, tirada <strong>no mesmo dia</strong>, e registrada <strong>dentro do app GymRats</strong>.</p>
+    <p>A foto deve:</p>
+    <ul>
+      <li>Representar a execução real da atividade;</li>
+      <li>Ser tirada no momento da realização;</li>
+      <li>Ter contexto visual que comprove a prática.</li>
+    </ul>
+
+    <h3>Exemplos de provas visuais válidas por pilar:</h3>
+    <ul>
+      <li><strong>Movimento Intencional:</strong> foto do ambiente real de treino ou da execução do exercício</li>
+      <li><strong>Nutrição Estratégica:</strong> foto do prato consumido e/ou dos ingredientes reais</li>
+      <li><strong>Clareza e Propósito:</strong> foto do momento real (Bíblia, caderno de anotações, ambiente de reflexão)</li>
+      <li><strong>Recuperação Ativa:</strong> evidência prática da atividade (registro de sono, leitura, skincare, organização)</li>
+    </ul>
+
+    <!-- Section 6 -->
+    <h2 id="sec6">6. Prazo de Registro</h2>
+    <ul>
+      <li>O registro deve ser feito <strong>até 23:59 do mesmo dia</strong>.</li>
+      <li>Após o horário limite, a pontuação do item será <strong>zerada</strong>.</li>
+      <li><strong>Não existe registro retroativo.</strong> Não é possível registrar atividades de dias anteriores.</li>
+    </ul>
+
+    <!-- Section 7 -->
+    <h2 id="sec7">7. Integridade</h2>
+    <p>É expressamente proibido:</p>
+    <ul>
+      <li>Enviar fotos repetidas, reutilizadas de outros dias ou contextos;</li>
+      <li>Utilizar fotos da internet ou de terceiros;</li>
+      <li>Enviar fotos fora de contexto, falsas ou manipuladas digitalmente;</li>
+      <li>Qualquer tentativa de burlar o sistema de validação.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p><strong>Consequência:</strong> Qualquer infração comprovada resulta em <strong>desclassificação imediata</strong>, sem possibilidade de recurso.</p>
+    </div>
+
+    <!-- Section 8 -->
+    <h2 id="sec8">8. Ranking e Desempate</h2>
+    <p>O ranking é atualizado dentro do app GymRats e visível para todos os participantes. A posição é definida pela <strong>pontuação acumulada</strong> ao longo dos 21 dias.</p>
+
+    <h3>Critérios de desempate (em ordem de prioridade):</h3>
+    <ol class="section-list">
+      <li>Maior sequência de dias perfeitos (40 pontos no dia)</li>
+      <li>Menor número de dias zerados</li>
+      <li>Maior regularidade (menor oscilação entre pontuações diárias)</li>
+      <li>Auditoria das provas (análise das fotos enviadas)</li>
+    </ol>
+    <p>Persistindo inconsistência após a auditoria, o participante será desclassificado.</p>
+
+    <!-- Section 9 -->
+    <h2 id="sec9">9. Premiação</h2>
+    <ul>
+      <li><strong>1º lugar:</strong> Consulta com Dra. Adriana + Kit completo Evo Nutrition</li>
+      <li><strong>2º lugar:</strong> Kit completo Evo Nutrition</li>
+      <li><strong>3º lugar:</strong> Kit Evo Coffee</li>
+    </ul>
+    <p>Os prêmios são <strong>intransferíveis</strong> e <strong>não podem ser convertidos em dinheiro</strong>.</p>
+    <p>A entrega será realizada em até <strong>30 dias</strong> após o encerramento oficial do desafio.</p>
+
+    <!-- Section 10 -->
+    <h2 id="sec10">10. Política de Cancelamento e Reembolso</h2>
+    <ul>
+      <li><strong>Direito de arrependimento:</strong> O participante poderá solicitar cancelamento em até <strong>7 dias corridos</strong> após a compra, conforme o Art. 49 do Código de Defesa do Consumidor (CDC).</li>
+      <li><strong>Cancelamento dentro de 7 dias:</strong> reembolso integral do valor pago.</li>
+      <li><strong>Cancelamento após 7 dias:</strong> não haverá reembolso, pois o serviço já estará em execução.</li>
+      <li><strong>Solicitações de cancelamento:</strong> devem ser enviadas para <a href="mailto:contato@evohealth.med.br">contato@evohealth.med.br</a>.</li>
+    </ul>
+
+    <!-- Section 11 -->
+    <h2 id="sec11">11. Proteção de Dados (LGPD)</h2>
+    <p>A EvoHealth respeita a privacidade dos participantes e cumpre a <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD)</strong>.</p>
+
+    <h3>Dados coletados:</h3>
+    <ul>
+      <li>Nome e endereço de e-mail;</li>
+      <li>Fotos de atividades diárias enviadas no app GymRats.</li>
+    </ul>
+
+    <h3>Finalidade:</h3>
+    <p>Validação da participação no desafio, composição do ranking e auditoria.</p>
+
+    <h3>Compartilhamento:</h3>
+    <p>As fotos <strong>não serão compartilhadas</strong> fora do contexto do desafio sem consentimento expresso do participante.</p>
+
+    <h3>Retenção:</h3>
+    <p>As fotos serão mantidas durante o período do desafio + <strong>90 dias</strong> para fins de auditoria. Após esse prazo, serão <strong>excluídas definitivamente</strong>.</p>
+
+    <h3>Direitos do titular:</h3>
+    <ul>
+      <li>Acesso aos seus dados pessoais;</li>
+      <li>Correção de dados incompletos ou inexatos;</li>
+      <li>Exclusão dos dados pessoais.</li>
+    </ul>
+    <p>Para exercer seus direitos, entre em contato pelo e-mail <a href="mailto:contato@evohealth.med.br">contato@evohealth.med.br</a>.</p>
+
+    <p><strong>Base legal:</strong> Consentimento (Art. 7, I, LGPD).</p>
+
+    <!-- Section 12 -->
+    <h2 id="sec12">12. Disposições Finais</h2>
+    <ul>
+      <li>A organização reserva-se o direito de alterar este regulamento com <strong>aviso prévio de 48 horas</strong> aos participantes.</li>
+      <li>Casos omissos serão resolvidos pela organização.</li>
+      <li><strong>Foro:</strong> Comarca da cidade sede da EvoHealth, para resolução de quaisquer disputas decorrentes deste regulamento.</li>
+    </ul>
+
+    <!-- Footer quote -->
+    <div class="quote-box">
+      <p>"A verdadeira competição é contra quem você foi ontem. A integridade no processo é o que constrói a sua saúde para o futuro."</p>
+    </div>
+
+    <a href="./index.html" class="back-link">&larr; Voltar para o Desafio</a>
+
+    <footer>
+      <p>&copy; 2026 EvoHealth. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>

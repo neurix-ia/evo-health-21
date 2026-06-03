@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio EvoHealth 21 | 21 Dias de Transformação</title>
+  <meta name="description" content="Participe do Desafio EvoHealth 21 — 21 dias transformando sua saúde através de exercício, alimentação real, devocional e autocuidado. R$97.">
+  <meta property="og:title" content="Desafio EvoHealth 21 | 21 Dias de Transformação">
+  <meta property="og:description" content="4 pilares, 21 dias, 840 pontos possíveis. Prêmios exclusivos para os 3 primeiros.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://desafio.evohealth.med.br/">
+  <meta property="og:image" content="https://desafio.evohealth.med.br/og-image.png">
+  <link rel="canonical" href="https://desafio.evohealth.med.br/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Variables ─────────────────────────────────────── */
+    :root {
+      /* Evo Health Theme Core (Teal Mode) */
+      --bg-base: #0d5f72;
+      --bg-surface: #137b92;
+      --bg-surface-light: rgba(255, 255, 255, 0.08);
+      --bg-surface-glass: rgba(13, 95, 114, 0.85);
+      
+      /* Typography */
+      --text-primary: #ffffff;
+      --text-secondary: #e8f4f7;
+      --text-muted: #86dfd1;
+      
+      /* Brand Accents (Vibrant Cyan for contrast) */
+      --accent-cyan: #86dfd1;
+      --accent-teal: #5ac4b3;
+      --accent-gradient: linear-gradient(135deg, #86dfd1 0%, #5ac4b3 100%);
+      --accent-glow: 0 8px 24px rgba(134, 223, 209, 0.25);
+      --accent-glow-strong: 0 12px 32px rgba(134, 223, 209, 0.45);
+      
+      /* Gold Accents for Pricing/Premium */
+      --gold-light: #fdf6e3;
+      --gold-primary: #facc15;
+      --gold-dark: #c9a227;
+      --gold-gradient: linear-gradient(135deg, #facc15 0%, #c9a227 100%);
+      --gold-glow: 0 8px 24px rgba(250, 204, 21, 0.25);
+
+      /* UI Elements */
+      --border-subtle: rgba(255, 255, 255, 0.1);
+      --border-light: rgba(255, 255, 255, 0.2);
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+      
+      --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --header-h: 72px;
+    }
+
+    /* ── Reset & Base ──────────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      height: -webkit-fill-available;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      font-family: var(--font-main);
+      background-color: #0a0a0a;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    .snap-container {
+      height: 100vh;
+      height: -webkit-fill-available;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .snap-container::-webkit-scrollbar { display: none; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+      z-index: 0;
+      pointer-events: none;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      top: -20%;
+      right: -10%;
+      width: 60%;
+      height: 120%;
+      background: radial-gradient(ellipse at center, rgba(134, 223, 209, 0.12) 0%, transparent 65%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+
+    /* ── Utilities ─────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .container-sm {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .text-center { text-align: center; }
+    .text-gradient {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    .text-gold {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+    }
+    .eyebrow-lg {
+      font-size: 1.1rem;
+      padding: 0.5rem 1.25rem;
+    }
+    .eyebrow-gold {
+      background: rgba(234, 179, 8, 0.1);
+      border-color: rgba(234, 179, 8, 0.2);
+      color: var(--gold-primary);
+    }
+
+    /* ── Typography ────────────────────────────────────── */
+    h1, h2, h3, h4 { 
+      font-weight: 800; 
+      line-height: 1.1; 
+      letter-spacing: -0.03em; 
+      color: var(--text-primary);
+    }
+    h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
+    h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 0.5rem; }
+    h3 { font-size: clamp(1.15rem, 3vw, 1.35rem); }
+    
+    .section-lead {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    /* ── Buttons ───────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-main);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: #0d5f72;
+      box-shadow: var(--accent-glow);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--accent-glow-strong);
+      filter: brightness(1.1);
+    }
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #0d5f72;
+      box-shadow: var(--gold-glow);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 32px rgba(234, 179, 8, 0.5);
+      filter: brightness(1.1);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-light);
+    }
+    .btn-outline:hover {
+      background: var(--bg-surface-light);
+      border-color: var(--text-secondary);
+    }
+    .btn-lg { font-size: 1.125rem; padding: 1.25rem 2.5rem; border-radius: 14px; }
+    .btn-full { width: 100%; }
+
+    /* ── Header ────────────────────────────────────────── */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--header-h);
+      background: var(--bg-surface-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+    .header-inner {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo img { height: 40px; }
+    .nav { display: flex; gap: 2rem; align-items: center; }
+    .nav a {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: color 0.2s, transform 0.2s;
+      position: relative;
+    }
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; width: 0%; height: 2px;
+      background: var(--accent-cyan);
+      transition: width 0.3s ease;
+    }
+    .nav a:hover, .nav a.active { color: var(--text-primary); transform: translateY(-1px); }
+    .nav a:hover::after, .nav a.active::after { width: 100%; }
+    .nav .btn-nav {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      font-size: 0.875rem;
+    }
+    .nav .btn-nav:hover { background: rgba(255, 255, 255, 0.25); }
+    @media (max-width: 768px) {
+      .nav a:not(.btn-nav) { display: none; }
+    }
+
+    /* ── Sections ──────────────────────────────────────── */
+    .section { 
+      padding: 5rem 0 2rem 0; 
+      position: relative; 
+      min-height: 100vh; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      scroll-snap-align: start; 
+      scroll-snap-stop: always;
+      background: transparent;
+    }
+    
+    /* Background Glows */
+    .glow-bg {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+      top: -200px;
+      left: -200px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .glow-bg-right {
+      left: auto;
+      right: -200px;
+      background: radial-gradient(circle, rgba(20, 184, 166, 0.1) 0%, transparent 70%);
+    }
+
+    /* ── Hero Banner (Dark) ────────────────────────────── */
+    .hero-banner {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: transparent;
+      padding: 0 2rem;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+    .hero-banner-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-banner-logo {
+      width: 100%;
+      max-width: 650px;
+      height: auto;
+      margin: 0 auto 2.5rem auto;
+      display: block;
+    }
+    .hero-banner-subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: #ffffff;
+      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 400;
+    }
+    .hero-banner-subtitle strong {
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Hero Intro (Dark) ────────────────────────────── */
+    .hero-intro {
+      background: transparent;
+      padding: 0 2rem;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+    .hero-intro-content {
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-intro h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--text-primary);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+    .hero-intro h2 .text-gradient-intro {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-intro-desc {
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 1rem auto 1.5rem;
+      max-width: 650px;
+      text-wrap: balance;
+    }
+    .hero-intro-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-intro-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .intro-stat-val {
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+    .intro-stat-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.4rem;
+    }
+    .hero-intro-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .btn-intro-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-teal));
+      color: #0a0a0a;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-family: var(--font-main);
+    }
+    .btn-intro-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+    }
+    .btn-intro-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2.5rem;
+      background: transparent;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 100px;
+      border: 2px solid var(--border-light);
+      text-decoration: none;
+      transition: border-color 0.3s, transform 0.3s;
+      font-family: var(--font-main);
+    }
+    .btn-intro-outline:hover {
+      border-color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+    .hero-image-wrapper {
+      margin-top: 0;
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hero-intro-stat-divider {
+      width: 1px;
+      height: 2.5rem;
+      background: var(--border-light);
+      align-self: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero-banner { padding: 7rem 1.5rem 4rem; }
+      .hero-banner-logo { max-width: 90%; }
+      .hero-banner-subtitle { font-size: 0.95rem; }
+      .hero-intro { padding: 4rem 1.5rem; }
+      .hero-intro-stats { gap: 1.5rem; }
+      .hero-intro-stat-divider { display: none; }
+      .hero-image-wrapper img { height: 300px; }
+    }
+
+    /* ── Pilares (Bento Grid) ──────────────────────────── */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.5rem;
+      position: relative;
+      z-index: 10;
+      grid-auto-rows: 1fr;
+    }
+    .bento-card {
+      background: var(--bg-surface-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 220px;
+      justify-content: space-between;
+    }
+    .bento-card:hover {
+      border-color: rgba(6, 182, 212, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(6, 182, 212, 0.1);
+    }
+    .bento-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    }
+    
+    .card-exercicio { grid-column: span 7; }
+    .card-alimentacao { grid-column: span 5; }
+    .card-devocional { grid-column: span 5; }
+    .card-autocuidado { grid-column: span 7; }
+    
+    @media (max-width: 992px) {
+      .card-exercicio, .card-alimentacao, .card-devocional, .card-autocuidado { grid-column: span 6; }
+    }
+    @media (max-width: 768px) {
+      .card-exercicio, .card-alimentacao, .card-devocional, .card-autocuidado { grid-column: span 12; }
+    }
+
+    .bento-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: rgba(6, 182, 212, 0.1);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.75rem;
+      color: var(--accent-cyan);
+    }
+    .bento-icon svg { width: 24px; height: 24px; }
+    .bento-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .bento-pts {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 100px;
+      color: var(--accent-teal);
+      font-weight: 600;
+    }
+    .bento-desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* ── Steps ─────────────────────────────────────────── */
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 992px) { .steps-container { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .steps-container { grid-template-columns: 1fr; } }
+    
+    .step-item {
+      background: var(--bg-surface-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+    }
+    .step-number {
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.05);
+      position: absolute;
+      top: 1rem; right: 1.5rem;
+      line-height: 1;
+    }
+    .step-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: var(--accent-gradient);
+      display: flex; align-items: center; justify-content: center;
+      color: #000;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--accent-glow);
+    }
+    .step-item h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+    .step-item p { color: var(--text-secondary); font-size: 0.95rem; }
+
+    /* ── Progress / Pontuacao ──────────────────────────── */
+    .score-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    @media (max-width: 992px) { .score-layout { grid-template-columns: 1fr; gap: 2rem; } }
+    
+    .score-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .circle-progress {
+      position: relative;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-surface-light);
+      box-shadow: inset 0 0 50px rgba(0,0,0,0.3), 0 0 0 2px var(--border-subtle);
+    }
+    .circle-progress::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: conic-gradient(var(--accent-cyan) 0%, var(--accent-teal) 70%, transparent 70%);
+      z-index: -1;
+      filter: blur(4px);
+    }
+    .circle-progress::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      background: conic-gradient(var(--accent-cyan) 0%, var(--accent-teal) 70%, transparent 70%);
+      z-index: -1;
+    }
+    
+    @keyframes pulseGlow {
+      0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+        transform: scale(1);
+      }
+      50% {
+        filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 40px var(--accent-cyan));
+        transform: scale(1.05);
+      }
+    }
+    .circle-value {
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1;
+      color: #ffffff;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+      animation: pulseGlow 3s infinite ease-in-out;
+      display: inline-block; /* For transform to work smoothly */
+    }
+    .circle-label {
+      color: #ffffff;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+    
+    .score-breakdown {
+      background: var(--bg-surface-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 2.5rem;
+    }
+    .score-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .score-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .score-row:first-child { padding-top: 0; }
+    .score-name { display: flex; align-items: center; gap: 1rem; font-weight: 600; font-size: 1.1rem; }
+    .score-name svg { color: var(--accent-cyan); }
+    .score-pts { font-weight: 800; color: var(--text-primary); }
+
+    /* ── Gallery ───────────────────────────────────────── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      max-height: 25vh;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      filter: grayscale(20%) contrast(1.1);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: grayscale(0%) contrast(1.1);
+    }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+    }
+
+    /* ── Prizes ────────────────────────────────────────── */
+    .prizes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: end;
+    }
+    @media (max-width: 900px) { 
+      .prizes-grid { grid-template-columns: 1fr; align-items: stretch; } 
+    }
+    .prize-card {
+      background: var(--bg-surface-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s;
+    }
+    .prize-card:hover { transform: translateY(-5px); }
+    .prize-medal {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+    }
+    .prize-place {
+      font-size: 0.875rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+    }
+    .prize-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .prize-card p { color: var(--text-secondary); font-size: 0.95rem; }
+    
+    .prize-1st {
+      background: linear-gradient(to bottom, rgba(234, 179, 8, 0.1), var(--bg-surface-light));
+      border-color: rgba(234, 179, 8, 0.3);
+      padding: 2rem 1.5rem;
+      box-shadow: 0 20px 40px -10px rgba(234, 179, 8, 0.15);
+    }
+    .prize-1st .prize-place { color: var(--gold-primary); }
+    @media (max-width: 900px) { .prize-1st { order: -1; } }
+
+    /* ── Rules Accordion ───────────────────────────────── */
+    .rules-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .rule-item {
+      background: var(--bg-surface-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .rule-trigger {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      line-height: 1.4;
+    }
+    .rule-trigger:hover { background: rgba(255, 255, 255, 0.05); }
+    .rule-icon {
+      transition: transform 0.3s;
+      color: var(--text-secondary);
+    }
+    .rule-trigger[aria-expanded="true"] .rule-icon { transform: rotate(180deg); color: var(--accent-cyan); }
+    .rule-body {
+      display: none;
+      padding: 0 1.5rem 1.5rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .rule-body.open { display: block; }
+    .rule-body ul { padding-left: 1.5rem; list-style-type: disc; margin-top: 0.5rem; }
+    .rule-body li { margin-bottom: 0.5rem; }
+
+    /* ── Pricing & Checkout ────────────────────────────── */
+    .pricing-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      background: var(--bg-surface-light);
+      border: 1px solid rgba(234, 179, 8, 0.3);
+      border-radius: 24px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px -20px rgba(234, 179, 8, 0.2);
+    }
+    .pricing-layout::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: var(--gold-gradient);
+    }
+    @media (max-width: 992px) { 
+      .pricing-layout { grid-template-columns: 1fr; padding: 2rem; } 
+    }
+    
+    .pricing-info h2 { margin-bottom: 0.5rem; font-size: 1.75rem; }
+    .price-block { margin: 1rem 0; }
+    .price-val { font-size: 3rem; font-weight: 900; line-height: 1; color: var(--gold-primary); }
+    .price-sub { color: var(--text-secondary); font-size: 1rem; margin-top: 0.5rem; }
+    
+    .features-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+    .feature-item { display: flex; align-items: center; gap: 1rem; color: var(--text-primary); font-size: 1.05rem;}
+    .feature-item svg { color: var(--gold-primary); flex-shrink: 0; }
+
+    .checkout-form {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 1.5rem;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+    }
+    .form-control {
+      width: 100%;
+      background: var(--bg-base);
+      border: 1px solid var(--border-light);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      font-size: 1rem;
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.2);
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .checkbox-group input[type="checkbox"] {
+      margin-top: 0.25rem;
+      width: 1.25rem; height: 1.25rem;
+      accent-color: var(--gold-primary);
+    }
+    .checkbox-group label {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .checkbox-group a { color: var(--gold-primary); text-decoration: underline; }
+
+    /* ── Footer ────────────────────────────────────────── */
+    .footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 4rem 0;
+      text-align: center;
+      background: transparent;
+      scroll-snap-align: end;
+    }
+    .footer-logo { height: 40px; margin: 0 auto 2rem; opacity: 1; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+    .footer-links a { color: var(--text-secondary); font-size: 0.875rem; }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-copy { color: var(--text-muted); font-size: 0.875rem; }
+
+    /* ── Animations ────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* WhatsApp Float */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      width: 60px; height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 99;
+      transition: transform 0.3s;
+    }
+    .wa-float:hover { transform: scale(1.1) translateY(-5px); }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <img src="img/logo-evohealth-white.png" alt="EvoHealth">
+      </a>
+      <nav class="nav">
+        <a href="#pilares">Os Pilares</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#premiacao">Premiação</a>
+        <a href="#inscricao" class="btn-nav">Garanta sua Vaga</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="snap-container">
+
+  <!-- Hero Banner (Dark) -->
+  <section class="hero-banner">
+    <div class="hero-banner-content reveal">
+      <img src="img/logo-desafio.png" alt="Desafio EvoHealth 21" class="hero-banner-logo">
+      <p class="hero-banner-subtitle">
+        21 dias para <strong>transformar</strong> sua rotina e provar que a <strong>disciplina</strong> muda tudo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Hero Intro (Light) -->
+  <section class="hero-intro">
+    <div class="hero-intro-content reveal">
+      <h2>Redefina a sua biologia.<br><span class="text-gradient-intro">21 Dias de Alta Performance.</span></h2>
+      <p class="hero-intro-desc">
+        Quatro pilares diários. Constância absoluta. Uma comunidade focada em longevidade.
+        Desafie-se por 21 dias, otimize o seu metabolismo e concorra a prêmios exclusivos ao construir a sua melhor versão.
+      </p>
+
+      <div class="hero-intro-stats">
+        <div class="hero-intro-stat">
+          <span class="intro-stat-val">21</span>
+          <span class="intro-stat-label">Dias</span>
+        </div>
+        <div class="hero-intro-stat-divider"></div>
+        <div class="hero-intro-stat">
+          <span class="intro-stat-val">4</span>
+          <span class="intro-stat-label">Pilares</span>
+        </div>
+        <div class="hero-intro-stat-divider"></div>
+        <div class="hero-intro-stat">
+          <span class="intro-stat-val">40</span>
+          <span class="intro-stat-label">Pts/Dia</span>
+        </div>
+      </div>
+
+      <div class="hero-intro-actions">
+        <a href="#inscricao" class="btn-intro-primary">Entrar no Desafio</a>
+        <a href="#regras" class="btn-intro-outline">Ler Regulamento</a>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <img src="img/hero.jpg" alt="Atleta em foco, constância e disciplina" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- Os Pilares (Bento Grid) -->
+  <section id="pilares" class="section section-alt">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="eyebrow">A Fundação</span>
+        <h2>Os 4 Pilares Diários</h2>
+        <p class="section-lead">Sem negociação. Sem exceções. Todo dia, você deve cumprir e registrar no GymRats os quatro fundamentos para pontuar.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Exercício -->
+        <div class="bento-card card-exercicio reveal">
+          <div class="bento-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11M6.5 17.5h11M3 9.5l3-3M18 14.5l3 3M3 14.5l3 3M18 9.5l3-3"/><rect x="6" y="9" width="12" height="6" rx="2"/></svg>
+          </div>
+          <h3 class="bento-title">Movimento Intencional <span class="bento-pts">10 pts/dia</span></h3>
+          <p class="bento-desc">No mínimo 30 minutos de treino estruturado para ativar o seu metabolismo. Registre seu treino do dia com uma foto ou vídeo.</p>
+        </div>
+
+        <!-- Alimentação -->
+        <div class="bento-card card-alimentacao reveal">
+          <div class="bento-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-6.88 17.19M12 2a10 10 0 0 1 6.88 17.19M12 2v20"/><path d="M6 12h12"/></svg>
+          </div>
+          <h3 class="bento-title">Nutrição Estratégica <span class="bento-pts">10 pts/dia</span></h3>
+          <p class="bento-desc">Comida de verdade. Zero ultraprocessados para otimizar a sua fisiologia. Faça uma refeição limpa e publique a foto.</p>
+        </div>
+
+        <!-- Devocional -->
+        <div class="bento-card card-devocional reveal">
+          <div class="bento-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="bento-title">Clareza e Propósito <span class="bento-pts">10 pts/dia</span></h3>
+          <p class="bento-desc">Pausa intencional para reconexão espiritual e foco inabalável. Reserve um tempo para leitura, meditação ou oração e documente.</p>
+        </div>
+
+        <!-- Autocuidado -->
+        <div class="bento-card card-autocuidado reveal">
+          <div class="bento-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="bento-title">Recuperação Ativa <span class="bento-pts">10 pts/dia</span></h3>
+          <p class="bento-desc">A base da performance. Hidratação, sono de qualidade, skincare ou alongamento. Você escolhe a sua forma de recuperação e prova.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como Funciona -->
+  <section id="como-funciona" class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="eyebrow">A Dinâmica</span>
+        <h2>Entrando no Jogo</h2>
+        <p class="section-lead">A mecânica é simples, a execução exige foco. Veja como participar.</p>
+      </div>
+
+      <div class="steps-container reveal">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <h3>Entre no ecossistema</h3>
+          <p>Garanta sua vaga pagando a taxa única e entre no grupo oficial do GymRats.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Rotina de alta performance</h3>
+          <p>Realize os 4 pilares todos os dias. Sem falhar. Crie a rotina inquebrável.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          <h3>Registre suas evidências</h3>
+          <p>Poste provas visuais (fotos/vídeos) no GymRats até às 23h59 do mesmo dia.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
+          <h3>Domine o ranking</h3>
+          <p>Acompanhe sua pontuação ao vivo. Os mais consistentes dominam o topo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pontuação -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="score-layout">
+        <div class="score-visual reveal">
+          <div class="circle-progress">
+            <span class="circle-value">840</span>
+            <span class="circle-label">Pontos em 21 Dias</span>
+          </div>
+        </div>
+        <div class="score-text reveal">
+          <span class="eyebrow">Matemática da Consistência</span>
+          <h2>Zero tolerância para dias perdidos.</h2>
+          <p class="section-lead" style="margin-left: 0; max-width: 100%;">
+            Você não pode compensar um dia ruim no dia seguinte. Cada pilar validado soma 10 pontos. O dia perfeito rende 40 pontos. O objetivo é fechar os 21 dias com a pontuação máxima.
+          </p>
+
+          <div class="score-breakdown">
+            <div class="score-row">
+              <span class="score-name">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Semana 1 (7 dias)
+              </span>
+              <span class="score-pts text-gradient">280 pts</span>
+            </div>
+            <div class="score-row">
+              <span class="score-name">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Semana 2 (14 dias)
+              </span>
+              <span class="score-pts text-gradient">560 pts</span>
+            </div>
+            <div class="score-row">
+              <span class="score-name">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Final (21 dias)
+              </span>
+              <span class="score-pts text-gold">840 pts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="eyebrow">Comunidade</span>
+        <h2>A Força do Coletivo</h2>
+        <p class="section-lead">Fazer sozinho é difícil. Fazer junto com centenas de pessoas buscando a mesma evolução muda o jogo.</p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item"><img src="img/gallery-1.jpg" alt="Transformação e treino" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/gallery-2.jpg" alt="Alimentação saudável" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/gallery-3.jpg" alt="Devocional e reflexão" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/gallery-4.jpg" alt="Treino ao ar livre" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/gallery-5.jpg" alt="Comunidade focada" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/gallery-6.jpg" alt="Resultados reais" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premiação -->
+  <section id="premiacao" class="section section-alt">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="eyebrow eyebrow-gold">Glória aos Constantes</span>
+        <h2>A Recompensa</h2>
+        <p class="section-lead">A maior recompensa é o seu novo corpo e mente. Mas os três mais disciplinados levam prêmios exclusivos para casa.</p>
+      </div>
+
+      <div class="prizes-grid reveal">
+        <!-- 2nd Place -->
+        <div class="prize-card">
+          <span class="prize-medal">🥈</span>
+          <div class="prize-place">2º Lugar</div>
+          <h3>Kit Evo Nutrition</h3>
+          <p>Kit completo de suplementos e produtos premium da linha Evo Nutrition.</p>
+        </div>
+        
+        <!-- 1st Place -->
+        <div class="prize-card prize-1st">
+          <span class="prize-medal">🥇</span>
+          <div class="prize-place">1º Lugar Absoluto</div>
+          <h3>Consulta Integrativa</h3>
+          <p>Consulta exclusiva com a Dra. Adriana para orquestrar a sua transformação fisiológica e metabólica.</p>
+        </div>
+        
+        <!-- 3rd Place -->
+        <div class="prize-card">
+          <span class="prize-medal">🥉</span>
+          <div class="prize-place">3º Lugar</div>
+          <h3>Programa Refine</h3>
+          <p>Acesso ao programa de autoconhecimento para dar um boost mental na sua performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkout / Pricing -->
+  <section id="inscricao" class="section">
+    <div class="container">
+      <div class="pricing-layout reveal">
+        <div class="pricing-info">
+          <span class="eyebrow eyebrow-gold">Acesso Imediato</span>
+          <h2>Comprometa-se com a sua Saúde. Eleve os seus padrões.</h2>
+          
+          <div class="price-block">
+            <div class="price-val">R$ 97</div>
+            <div class="price-sub">Pagamento único. Acesso por 21 dias.</div>
+          </div>
+
+          <div class="features-list">
+            <div class="feature-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Acesso ao grupo exclusivo no App GymRats
+            </div>
+            <div class="feature-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Acompanhamento no ranking em tempo real
+            </div>
+            <div class="feature-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Concorrência aos prêmios (Top 3)
+            </div>
+            <div class="feature-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Comunidade de alta performance
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-form">
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Garanta sua vaga agora</h3>
+          <p style="color:var(--text-secondary); margin-bottom: 1.5rem; font-size: 1rem;">Clique no botão abaixo para ser redirecionado ao checkout seguro.</p>
+          <a href="https://pay2.metodoevo.com.br/?uid=24cd0bc1-c0bd-4d42-8098-419fb90e019c" class="btn btn-gold btn-full btn-lg" target="_blank" rel="noopener">
+            Garantir Minha Vaga — R$ 97
+          </a>
+          <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:1rem;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline; vertical-align:middle; margin-right:4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Pagamento 100% seguro via Método Evo
+          </p>
+          <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:0.5rem;">
+            Ao pagar, você concorda com o <a href="regulamento.html" target="_blank" style="color:var(--accent-cyan);">Regulamento do Desafio</a> e a Política de Privacidade.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regras Accordion -->
+  <section id="regras" class="section section-alt">
+    <div class="container-sm">
+      <div class="text-center reveal">
+        <span class="eyebrow">Transparência</span>
+        <h2>As Regras do Jogo</h2>
+        <p class="section-lead">Leia atentamente. Ao se inscrever, você concorda integralmente com as condições abaixo.</p>
+      </div>
+
+      <div class="rules-list reveal">
+        <!-- Rule 1 -->
+        <div class="rule-item">
+          <button class="rule-trigger" aria-expanded="false" onclick="toggleRule(this)">
+            1. Duração e Período
+            <svg class="rule-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="rule-body">
+            O desafio tem duração de 21 dias corridos, com data de início e encerramento definidas no momento da inscrição. Todos os participantes iniciam e terminam no mesmo dia.
+          </div>
+        </div>
+        <!-- Rule 2 -->
+        <div class="rule-item">
+          <button class="rule-trigger" aria-expanded="false" onclick="toggleRule(this)">
+            2. Plataforma — GymRats
+            <svg class="rule-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="rule-body">
+            Todos os registros diários devem ser feitos exclusivamente no aplicativo GymRats. O link para o grupo oficial será enviado após a confirmação do pagamento.<br><br>
+            <a href="https://gymrats.app" class="text-gradient" style="font-weight:700;" target="_blank">Baixar GymRats para iOS ou Android</a>
+          </div>
+        </div>
+        <!-- Rule 3 -->
+        <div class="rule-item">
+          <button class="rule-trigger" aria-expanded="false" onclick="toggleRule(this)">
+            3. Pilares Obrigatórios
+            <svg class="rule-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="rule-body">
+            Os 4 pilares (Exercício, Alimentação, Devocional e Autocuidado) são todos obrigatórios. Para marcar pontuação máxima no dia, o participante precisa completar e registrar os 4 pilares. A ausência de qualquer um deles anula a pontuação daquele pilar específico.
+          </div>
+        </div>
+        <!-- Rule 4 -->
+        <div class="rule-item">
+          <button class="rule-trigger" aria-expanded="false" onclick="toggleRule(this)">
+            4. Evidência Visual
+            <svg class="rule-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="rule-body">
+            Cada pilar exige evidência visual clara (foto ou vídeo) publicada no GymRats. Registros sem evidência ou com fotos não relacionadas serão desconsiderados pela moderação e os pontos retirados.
+          </div>
+        </div>
+        <!-- Rule 5 -->
+        <div class="rule-item">
+          <button class="rule-trigger" aria-expanded="false" onclick="toggleRule(this)">
+            5. Prazo Diário — 23h59
+            <svg class="rule-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="rule-body">
+            Todos os registros devem ser postados até às 23h59 do próprio dia. Postagens após a meia-noite não contabilizarão pontos para o dia anterior.
+          </div>
+        </div>
+        <!-- Rule 6 -->
+        <div class="rule-item">
+          <button class="rule-trigger" aria-expanded="false" onclick="toggleRule(this)">
+            6. Integridade
+            <svg class="rule-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="rule-body">
+            Registros falsos (fotos da internet, fotos repetidas de dias anteriores) resultarão em desclassificação imediata sem direito a reembolso.
+          </div>
+        </div>
+        <!-- Rule 7 -->
+        <div class="rule-item">
+          <button class="rule-trigger" aria-expanded="false" onclick="toggleRule(this)">
+            7. Critérios de Desempate
+            <svg class="rule-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="rule-body">
+            Em caso de empate de pontos no final:
+            <ul>
+              <li>1º: Maior número de dias perfeitos (4 pilares concluídos).</li>
+              <li>2º: Maior sequência consecutiva inquebrável.</li>
+              <li>3º: Horário dos registros (quem postou primeiro tem vantagem).</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Rule 8 -->
+        <div class="rule-item">
+          <button class="rule-trigger" aria-expanded="false" onclick="toggleRule(this)">
+            8. Reembolso
+            <svg class="rule-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="rule-body">
+            Por se tratar de um desafio de compromisso, não há reembolso após o início da data oficial. A inscrição é uma promessa de comprometimento com sua própria saúde.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <img src="img/logo-evohealth-white.png" alt="EvoHealth" class="footer-logo">
+      <div class="footer-links">
+        <a href="regulamento.html">Regulamento Completo</a>
+        <a href="https://evohealth.med.br/campanha/evohealth-termos/" target="_blank">Política de Privacidade</a>
+      </div>
+      <p class="footer-copy">© 2026 EvoHealth. Todos os direitos reservados. Evolua conosco.</p>
+    </div>
+  </footer>
+  </main>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5511924903459" target="_blank" class="wa-float" aria-label="Suporte via WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // Reveal Animations on Scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          // observer.unobserve(entry.target); // keep it active or only once? Let's keep it once for performance
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach((el) => {
+      observer.observe(el);
+    });
+
+    // Dynamic Navigation Scroll Spy
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav a:not(.btn-nav)');
+    
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    sections.forEach(sec => navObserver.observe(sec));
+
+    // Accordion Logic
+    function toggleRule(btn) {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      
+      // Close all
+      document.querySelectorAll('.rule-trigger').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+
+      // If wasn't expanded, open it
+      if (!isExpanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.classList.add('open');
+      }
+    }
+
+    // Header Blur effect on scroll
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.style.background = 'rgba(15, 23, 42, 0.85)';
+        header.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+      } else {
+        header.style.background = 'var(--bg-surface-glass)';
+        header.style.borderBottom = '1px solid var(--border-subtle)';
+      }
+    });
+
+  </script>
+</body>
+</html>
