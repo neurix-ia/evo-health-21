@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desafio EvoHealth 21 | 21 Dias de Transformação</title>
-  <meta name="description" content="Participe do Desafio EvoHealth 21 — 21 dias transformando sua saúde através de exercício, alimentação real, devocional e autocuidado. R$97.">
+  <meta name="description" content="Participe do Desafio EvoHealth 21 — 21 dias para ajustar sua rotina, melhorar sua energia e provar que pequenas ações repetidas geram grandes mudanças. R$97.">
   <meta property="og:title" content="Desafio EvoHealth 21 | 21 Dias de Transformação">
-  <meta property="og:description" content="4 pilares, 21 dias, 840 pontos possíveis. Prêmios exclusivos para os 3 primeiros.">
+  <meta property="og:description" content="3 pilares, 21 dias, 840 pontos possíveis. Prêmios exclusivos para os 3 primeiros.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://desafio.evohealth.med.br/">
   <meta property="og:image" content="https://desafio.evohealth.med.br/og-image.png">
@@ -534,16 +534,16 @@
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
     }
     
-    .card-exercicio { grid-column: span 7; }
-    .card-alimentacao { grid-column: span 5; }
-    .card-devocional { grid-column: span 5; }
-    .card-autocuidado { grid-column: span 7; }
-    
+    .card-corpo { grid-column: span 4; }
+    .card-mente { grid-column: span 4; }
+    .card-espirito { grid-column: span 4; }
+
     @media (max-width: 992px) {
-      .card-exercicio, .card-alimentacao, .card-devocional, .card-autocuidado { grid-column: span 6; }
+      .card-corpo, .card-mente, .card-espirito { grid-column: span 6; }
+      .card-espirito { grid-column: span 12; }
     }
     @media (max-width: 768px) {
-      .card-exercicio, .card-alimentacao, .card-devocional, .card-autocuidado { grid-column: span 12; }
+      .card-corpo, .card-mente, .card-espirito { grid-column: span 12; }
     }
 
     .bento-icon {
@@ -736,10 +736,10 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
-      align-items: end;
+      align-items: stretch;
     }
-    @media (max-width: 900px) { 
-      .prizes-grid { grid-template-columns: 1fr; align-items: stretch; } 
+    @media (max-width: 900px) {
+      .prizes-grid { grid-template-columns: 1fr; align-items: stretch; }
     }
     .prize-card {
       background: var(--bg-surface-light);
@@ -749,6 +749,8 @@
       text-align: center;
       position: relative;
       transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
     }
     .prize-card:hover { transform: translateY(-5px); }
     .prize-medal {
@@ -773,7 +775,10 @@
       border-color: rgba(234, 179, 8, 0.3);
       padding: 2rem 1.5rem;
       box-shadow: 0 20px 40px -10px rgba(234, 179, 8, 0.15);
+      transform: scale(1.05);
+      z-index: 1;
     }
+    .prize-1st:hover { transform: scale(1.05) translateY(-5px); }
     .prize-1st .prize-place { color: var(--gold-primary); }
     @media (max-width: 900px) { .prize-1st { order: -1; } }
 
@@ -921,20 +926,26 @@
     .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
     .reveal.active { opacity: 1; transform: translateY(0); }
 
-    /* WhatsApp Float */
-    .wa-float {
-      position: fixed;
-      bottom: 2rem; right: 2rem;
-      width: 60px; height: 60px;
+    /* WhatsApp Footer */
+    .wa-footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
       background: #25D366;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
       color: #fff;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-      z-index: 99;
-      transition: transform 0.3s;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+      letter-spacing: 0.01em;
     }
-    .wa-float:hover { transform: scale(1.1) translateY(-5px); }
+    .wa-footer-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+    }
 
   </style>
 </head>
@@ -970,10 +981,9 @@
   <!-- Hero Intro (Light) -->
   <section class="hero-intro">
     <div class="hero-intro-content reveal">
-      <h2>Redefina a sua biologia.<br><span class="text-gradient-intro">21 Dias de Alta Performance.</span></h2>
+      <h2>21 Dias. 3 Pilares.<br><span class="text-gradient-intro">A Sua Melhor Versão.</span></h2>
       <p class="hero-intro-desc">
-        Quatro pilares diários. Constância absoluta. Uma comunidade focada em longevidade.
-        Desafie-se por 21 dias, otimize o seu metabolismo e concorra a prêmios exclusivos ao construir a sua melhor versão.
+        Três pilares diários. Evolução consistente. 21 dias para ajustar sua rotina, melhorar sua energia e provar para si mesmo que pequenas ações repetidas geram grandes mudanças. Uma comunidade focada em constância — porque o básico bem feito transforma.
       </p>
 
       <div class="hero-intro-stats">
@@ -983,7 +993,7 @@
         </div>
         <div class="hero-intro-stat-divider"></div>
         <div class="hero-intro-stat">
-          <span class="intro-stat-val">4</span>
+          <span class="intro-stat-val">3</span>
           <span class="intro-stat-label">Pilares</span>
         </div>
         <div class="hero-intro-stat-divider"></div>
@@ -1009,45 +1019,36 @@
     <div class="container">
       <div class="text-center reveal">
         <span class="eyebrow">A Fundação</span>
-        <h2>Os 4 Pilares Diários</h2>
-        <p class="section-lead">Sem negociação. Sem exceções. Todo dia, você deve cumprir e registrar no GymRats os quatro fundamentos para pontuar.</p>
+        <h2>Os 3 Pilares Diários</h2>
+        <p class="section-lead">Todo dia, três ações simples. Sem desculpas, sem complicação. Registre no GymRats e pontue.</p>
       </div>
 
       <div class="bento-grid">
-        <!-- Exercício -->
-        <div class="bento-card card-exercicio reveal">
+        <!-- Corpo -->
+        <div class="bento-card card-corpo reveal">
           <div class="bento-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11M6.5 17.5h11M3 9.5l3-3M18 14.5l3 3M3 14.5l3 3M18 9.5l3-3"/><rect x="6" y="9" width="12" height="6" rx="2"/></svg>
           </div>
-          <h3 class="bento-title">Movimento Intencional <span class="bento-pts">10 pts/dia</span></h3>
-          <p class="bento-desc">No mínimo 30 minutos de treino estruturado para ativar o seu metabolismo. Registre seu treino do dia com uma foto ou vídeo.</p>
+          <h3 class="bento-title">CORPO</h3>
+          <p class="bento-desc">Mexa-se por pelo menos 30 minutos. Não precisa ser perfeito — precisa ser feito. Caminhada, treino, dança, o que fizer sentido pra você. Registre no GymRats com foto ou vídeo.</p>
         </div>
 
-        <!-- Alimentação -->
-        <div class="bento-card card-alimentacao reveal">
-          <div class="bento-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-6.88 17.19M12 2a10 10 0 0 1 6.88 17.19M12 2v20"/><path d="M6 12h12"/></svg>
-          </div>
-          <h3 class="bento-title">Nutrição Estratégica <span class="bento-pts">10 pts/dia</span></h3>
-          <p class="bento-desc">Comida de verdade. Zero ultraprocessados para otimizar a sua fisiologia. Faça uma refeição limpa e publique a foto.</p>
-        </div>
-
-        <!-- Devocional -->
-        <div class="bento-card card-devocional reveal">
+        <!-- Mente -->
+        <div class="bento-card card-mente reveal">
           <div class="bento-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
-          <h3 class="bento-title">Clareza e Propósito <span class="bento-pts">10 pts/dia</span></h3>
-          <p class="bento-desc">Pausa intencional para reconexão espiritual e foco inabalável. Reserve um tempo para leitura, meditação ou oração e documente.</p>
+          <h3 class="bento-title">MENTE</h3>
+          <p class="bento-desc">Reserve um momento para cuidar da sua mente. Leitura, meditação, journaling, terapia — o que te reconecta com clareza. Registre no GymRats.</p>
         </div>
 
-        <!-- Autocuidado -->
-        <div class="bento-card card-autocuidado reveal">
+        <!-- Espírito -->
+        <div class="bento-card card-espirito reveal">
           <div class="bento-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
-          <h3 class="bento-title">Recuperação Ativa <span class="bento-pts">10 pts/dia</span></h3>
-          <p class="bento-desc">A base da performance. Hidratação, sono de qualidade, skincare ou alongamento. Você escolhe a sua forma de recuperação e prova.</p>
+          <h3 class="bento-title">ESPÍRITO</h3>
+          <p class="bento-desc">Alimente o que sustenta você por dentro. Oração, devocional, gratidão, conexão com algo maior. Registre no GymRats.</p>
         </div>
       </div>
     </div>
@@ -1072,8 +1073,8 @@
         <div class="step-item">
           <div class="step-number">2</div>
           <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>Rotina de alta performance</h3>
-          <p>Realize os 4 pilares todos os dias. Sem falhar. Crie a rotina inquebrável.</p>
+          <h3>Rotina de constância</h3>
+          <p>Realize os 3 pilares todos os dias. Sem falhar. Crie a rotina inquebrável.</p>
         </div>
         <div class="step-item">
           <div class="step-number">3</div>
@@ -1103,9 +1104,9 @@
         </div>
         <div class="score-text reveal">
           <span class="eyebrow">Matemática da Consistência</span>
-          <h2>Zero tolerância para dias perdidos.</h2>
+          <h2>Constância é o único segredo.</h2>
           <p class="section-lead" style="margin-left: 0; max-width: 100%;">
-            Você não pode compensar um dia ruim no dia seguinte. Cada pilar validado soma 10 pontos. O dia perfeito rende 40 pontos. O objetivo é fechar os 21 dias com a pontuação máxima.
+            Você não pode compensar um dia perdido no seguinte. Cada dia completo rende 40 pontos. O objetivo é fechar os 21 dias com constância — e a pontuação máxima vem naturalmente.
           </p>
 
           <div class="score-breakdown">
@@ -1179,15 +1180,15 @@
           <span class="prize-medal">🥇</span>
           <div class="prize-place">1º Lugar Absoluto</div>
           <h3>Consulta Integrativa</h3>
-          <p>Consulta exclusiva com a Dra. Adriana para orquestrar a sua transformação fisiológica e metabólica.</p>
+          <p>Consulta exclusiva com Dra. Adriana ou Dra. Isabella para apoiar a sua evolução.</p>
         </div>
         
         <!-- 3rd Place -->
         <div class="prize-card">
           <span class="prize-medal">🥉</span>
           <div class="prize-place">3º Lugar</div>
-          <h3>Programa Refine</h3>
-          <p>Acesso ao programa de autoconhecimento para dar um boost mental na sua performance.</p>
+          <h3>Evo Refine</h3>
+          <p>Programa de emagrecimento e qualidade de vida com aulas online por uma equipe multidisciplinar com conteúdo prático para entrar em ação.</p>
         </div>
       </div>
     </div>
@@ -1221,7 +1222,7 @@
             </div>
             <div class="feature-item">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Comunidade de alta performance
+              Comunidade focada em constância e evolução
             </div>
           </div>
         </div>
@@ -1282,7 +1283,7 @@
             <svg class="rule-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="rule-body">
-            Os 4 pilares (Exercício, Alimentação, Devocional e Autocuidado) são todos obrigatórios. Para marcar pontuação máxima no dia, o participante precisa completar e registrar os 4 pilares. A ausência de qualquer um deles anula a pontuação daquele pilar específico.
+            Os 3 pilares (Corpo, Mente e Espírito) são todos obrigatórios. Para marcar pontuação máxima no dia, o participante precisa completar e registrar os 3 pilares. A ausência de qualquer um deles anula a pontuação daquele pilar específico.
           </div>
         </div>
         <!-- Rule 4 -->
@@ -1324,7 +1325,7 @@
           <div class="rule-body">
             Em caso de empate de pontos no final:
             <ul>
-              <li>1º: Maior número de dias perfeitos (4 pilares concluídos).</li>
+              <li>1º: Maior número de dias perfeitos (3 pilares concluídos).</li>
               <li>2º: Maior sequência consecutiva inquebrável.</li>
               <li>3º: Horário dos registros (quem postou primeiro tem vantagem).</li>
             </ul>
@@ -1352,15 +1353,15 @@
         <a href="regulamento.html">Regulamento Completo</a>
         <a href="https://evohealth.med.br/campanha/evohealth-termos/" target="_blank">Política de Privacidade</a>
       </div>
+      <p style="color:var(--text-secondary);font-size:0.875rem;margin-bottom:0.75rem;">Dúvidas? Fale com a gente.</p>
+      <a href="https://wa.me/5511924903459" target="_blank" class="wa-footer-link" aria-label="Suporte via WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Suporte via WhatsApp
+      </a>
       <p class="footer-copy">© 2026 EvoHealth. Todos os direitos reservados. Evolua conosco.</p>
     </div>
   </footer>
   </main>
-
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/5511924903459" target="_blank" class="wa-float" aria-label="Suporte via WhatsApp">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
 
   <script>
     // Reveal Animations on Scroll
